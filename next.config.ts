@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
+import 'stream-web';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['hobbyistdecals.vercel.app'],
+  },
+  
 };
 
 export default nextConfig;

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavbarComponent from "@/components/global/navbar";
+import FooterComponent from "@/components/global/footer";
+import CompanyPoliciesComponent from "@/components/global/company-policies";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-fit w-full flex flex-col items-center justify-center  ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="w-full min-h-[3rem] bg-black text-white flex items-center justify-center py-2">
+          <p className="w-[90%] text-center text-wrap text-white text-sm lg:text-base leading-6 lg:leading-7 font-semibold">
+            Enjoy Quantity Discounts Up to 30% Off on Stock & Custom Decals! |
+            Save Big with Bulk Orders – Up to 50% Off!
+          </p>
+        </div>
+        <NavbarComponent />
         {children}
+        <CompanyPoliciesComponent />
+        <FooterComponent />
       </body>
     </html>
   );
