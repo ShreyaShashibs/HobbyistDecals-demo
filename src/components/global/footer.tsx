@@ -55,7 +55,7 @@ const FooterComponent = () => {
                 faq
               </p>
               <p className="capitalize text-white-40 text-base text-nowrap">
-                contact us
+              <a href="/contact-info">contact us</a>
               </p>
               <p className="capitalize text-white-40 text-base text-nowrap">
                 error 404

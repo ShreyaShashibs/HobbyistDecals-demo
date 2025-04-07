@@ -12,31 +12,30 @@ import React from "react";
 
 const AdvertisementBannersComponent = () => {
   return (
-    <div className="w-full min-h-[250px]">
+    <div className="w-full ">
       <Carousel
-        className="w-full h-full"
+        className="w-full relative  z-[10]"
         plugins={[
           Autoplay({
             delay: 3000,
           }),
         ]}
       >
-        <CarouselContent className="h-full w-full !m-0">
-          {Array(4)
-            .fill(0)
-            .map((item, index) => (
-              <CarouselItem key={index} className="w-full h-full !p-0">
+        <CarouselContent className="w-full !m-0">
+          {advertisementBannerImageUrls.map((imgUrl, index) => (
+            <CarouselItem key={index} className="w-full !p-0">
+              <div className="relative w-full aspect-[3/1] md:aspect-[5/2]  lg:aspect-[16/8] xl:aspect-[16/2] ">
                 <Image
-                  src={advertisementBannerImageUrls[index]}
-                  alt={"img " + index.toString()}
-                  width={0}
-                  height={0}
+                  src={imgUrl}
+                  alt={`img ${index}`}
+                  fill
                   unoptimized
                   quality={100}
-                  className="h-[250px] w-full object-cover"
+                  className="object-cover "
                 />
-              </CarouselItem>
-            ))}
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
       </Carousel>
     </div>
